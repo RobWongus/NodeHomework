@@ -174,3 +174,4 @@ const colors = {
         </style>`
           }
   
+//module.exports = data;
