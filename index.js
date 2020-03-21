@@ -9,9 +9,42 @@ inquirer
         },
 
         {
+            type: "input",
+            message: "Title of repository",
+            name: "title"
+        },
+
+        {
             type:"input",
-            message: ""
+            message: "Describe Your Repo.",
+            name: "Description"
+        },
+
+        {
+            type: "input",
+            message: "How to install.",
+            name: "installation"
+        },
+
+        {
+            type: "input",
+            message: "Instructions on how the application should be used.",
+            name: "usage"
+        },
+
+        {
+            type: "input",
+            message: "usernames of contributers",
+            name: "contributors"
+        },
+        
+        {
+            type: "input",
+            message: "License the repo is using.",
+            name: "license"
         }
+
+        
     ])
 
     .then(function(response) {
