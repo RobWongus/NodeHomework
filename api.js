@@ -3,7 +3,7 @@ const axios = require("axios");
 
 const api = {
     getUser(username) {
-        let gitApi= `https://api.github.com/users/${username}`
+        const gitApi= `https://api.github.com/users/${username}`
 
         axios
         .get(gitApi)

@@ -1,5 +1,12 @@
 const inquirer = require("inquirer");
 const api = require('./api.js');
+const markDown = require('./generateMarkdown');
+let colors = require('./generateHTML');
+const http = require('http');
+const fs = require('fs');
+
+
+
 inquirer
     .prompt([
         {
@@ -49,18 +56,40 @@ inquirer
 
     .then(function(response) {
         console.log(response["Github username"]);
+        api.getUser(response["Github username"]);
+        markDown(response)
 
-api.getUser(response["Github username"]);
     });
 // const questions = [
   
 // ];
 
-// function writeToFile(fileName, data) {
- 
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile("fileName","data", function(err) {
+        if (error){
+            return console.log(error);
+        }
+    })
+}
 
-// function init() {
+        function init() {
+            inquirer
+            
+            .prompt(questions)
+            
+            .then(async function takeInformation(answers) {
+                
+
+
+            }
+            writeToFile
+            end
+}
 
 // init();
 
+// function sum (a, b) {
+//     a + b
+// }
+
+// console.log(sum(1, 2))
