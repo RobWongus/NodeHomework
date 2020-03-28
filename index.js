@@ -78,13 +78,23 @@ function writeToFile(fileName, data) {
             .prompt(questions)
             
             .then(async function takeInformation(answers) {
+               
+                const userInformation = api.getUser(answers.username);
+                const data = Object.assign({}, answers, userInformation.data.data.userInformation);
+                const markStr = markDown.markDown(data);   
                 
+                writeToFile("README.md", markStr)
 
+            throw(err)
 
-            }
-            writeToFile
-            end
-}
+            })
+
+        };
+
+    
+            //writeToFile
+            //end
+
 
 // init();
 

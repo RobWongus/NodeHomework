@@ -174,5 +174,4 @@ const colors = {
         </style>`
           }
   
-module.exports = data;
-module.exports = colors;
+
