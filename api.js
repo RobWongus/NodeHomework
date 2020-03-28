@@ -5,9 +5,13 @@ const api = {
     getUser(username) {
         const gitApi= `https://api.github.com/users/${username}`
 
-        axios
+        return axios
         .get(gitApi)
-        .then(response => console.log(response.data));
+        .then(response => {
+            console.log(response.data)
+        return response 
+        });
+        
     }
   };
   

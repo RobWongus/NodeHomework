@@ -1,18 +1,17 @@
 const inquirer = require("inquirer");
 const api = require('./api.js');
 const markDown = require('./generateMarkdown');
-let colors = require('./generateHTML');
 const http = require('http');
 const fs = require('fs');
 
 
 
-inquirer
-    .prompt([
+const questions = 
+    [
         {
             type: "input",
             message: "Enter Github username.",
-            name: "Github username"
+            name: "username"
         },
 
         {
@@ -52,14 +51,14 @@ inquirer
         }
 
         
-    ])
+    ]
 
-    .then(function(response) {
-        console.log(response["Github username"]);
-        api.getUser(response["Github username"]);
-        markDown(response)
+    // .then(function(response) {
+    //     console.log(response["Github username"]);
+    //     api.getUser(response["Github username"]);
+    //     markDown(response)
 
-    });
+    // });
 // const questions = [
   
 // ];
@@ -77,12 +76,14 @@ function writeToFile(fileName, data) {
             
             .prompt(questions)
             
-            .then(async function takeInformation(answers) {
-               
+            .then(function takeInformation(answers) {
+                 console.log("HERE!", answers.username);
                 const userInformation = api.getUser(answers.username);
+                console.log("RAWRRR!", userInformation)
                 const data = Object.assign({}, answers, userInformation.data.data.userInformation);
-                const markStr = markDown.markDown(data);   
                 
+                const markStr = markDown.markDown(data);   
+                console.log("ROOOCK!", markStr);
                 writeToFile("README.md", markStr)
 
             throw(err)
@@ -96,7 +97,7 @@ function writeToFile(fileName, data) {
             //end
 
 
-// init();
+ init();
 
 // function sum (a, b) {
 //     a + b
