@@ -64,9 +64,11 @@ const questions =
 // ];
 
 function writeToFile(fileName, data) {
-    fs.writeFile("fileName","data", function(err) {
+    fs.writeFile(fileName, data, function(err) {
         if (error){
             return console.log(error);
+
+        else 
         }
     })
 }
@@ -77,26 +79,19 @@ function writeToFile(fileName, data) {
             .prompt(questions)
             
             .then(function takeInformation(answers) {
-                 console.log("HERE!", answers.username);
-                const userInformation = api.getUser(answers.username);
-                console.log("RAWRRR!", userInformation)
-                const data = Object.assign({}, answers, userInformation.data.data.userInformation);
-                
-                const markStr = markDown.markDown(data);   
-                console.log("ROOOCK!", markStr);
-                writeToFile("README.md", markStr)
-
-            throw(err)
-
+                //console.log("HERE!", answers.username);
+                const userInformation = api.getUser(answers.username)
+                .then(response => {
+                    writeToFile("README.md", response.data)
+                    console.log(response.data)
+                    return response
+                    
+                });
             })
-
-        };
+ };
 
     
-            //writeToFile
-            //end
-
-
+            
  init();
 
 // function sum (a, b) {
