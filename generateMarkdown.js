@@ -5,7 +5,7 @@ function generateMarkdown(data) {
     return `
   # ${data.title}
   
-![Github ALl Releases](http://img.shields.io/github/downloads/${data.username}/${data.title}/total)
+
 # Description
 
 ${data.description}
@@ -27,7 +27,7 @@ ${data.install}
 ${data.useage}
 
 ##License
-![Github license](https://image.shields.io/badge/license-${data.license}-blue.svg)
+![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
 
 ##Contributors
 ${data.contributors}
