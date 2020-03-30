@@ -34,6 +34,12 @@ const questions =
 
         {
             type: "input",
+            messgae: "Have you run tests?",
+            name: "test"
+        },
+
+        {
+            type: "input",
             message: "Instructions on how the application should be used.",
             name: "usage"
         },
@@ -69,15 +75,15 @@ const questions =
   
 // ];
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err) {
-        if (error) {
-            return console.log(error);
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, function(error) {
+//         if (error) {
+//             return console.log(error);
 
-        } 
-    });
+//         } 
+//     });
 
-}   
+// }   
         function init() {
             inquirer
             
@@ -87,9 +93,15 @@ function writeToFile(fileName, data) {
                 //console.log("HERE!", answers.username);
                 const userInformation = api.getUser(answers.username)
                 .then(response => {
-                    writeToFile("README.md", response.data)
-                    console.log(response.data)
-                    return response
+                    fs.writeToFile("README.md", markDown, function(error) {
+                        if(error) {
+                            throw error
+                        }else{
+                            console.log("it worked");
+                        }
+                    })
+                    // console.log(response.data)
+                    // return response
                     
                 });
             })
