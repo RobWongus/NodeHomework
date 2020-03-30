@@ -3,6 +3,7 @@ function generateMarkdown(data) {
   
 #${data.title}
   
+#ReadMe Generator
 
 # Table of Contents
 

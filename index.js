@@ -92,7 +92,7 @@ const questions =
             .then(function takeInformation(answers) {
                 //console.log("HERE!", answers.username);
                 const userInformation = api.getUser(answers.username)
-                const image = data.data.avatar_url;
+                
                 .then(response => {
                     fs.writeFile("README.md", markDown, function(error) {
                         if(error) {
