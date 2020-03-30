@@ -1,4 +1,4 @@
-
+const fs = require('fs');
 
 
 function generateMarkdown(data) {
@@ -6,37 +6,36 @@ function generateMarkdown(data) {
   # ${data.title}
   
 
-# Description
-
-${data.description}
-
 # Table of Contents
 
 * [Description]{##Description}
 * [Installation]{##Installation}
-* [Useage]{##Useage}
-* [License]{##License}
-* [Contributors]{##Contributors}
 * [Tests]{##Tests}
+* [Usage]{##Usage}
+* [Contributors]{##Contributors}
 * [Questions]{##Questions}
+* [License]{##License}
+
+## Description
+${data.description}
 
 ##Installation
 ${data.install}
 
+##Tests
+${data.testing}
+
 ##Useage
 ${data.useage}
-
-##License
-![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
 
 ##Contributors
 ${data.contributors}
 
-##Tests
-${data.testing}
-
 ##Questions
 ${data.questions}
+
+##License
+![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
 
 ![User's Avatar](${data.avatarURL})
 ${data.email}
