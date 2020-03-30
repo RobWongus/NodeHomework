@@ -1,11 +1,11 @@
-function generateMarkdown(data) {
+function generateMarkdown(response) {
     return `
   
-#${data.title}
+#${response.title}
   
-#ReadMe Generator
+# ReadMe Generator
 
-# Table of Contents
+## Table of Contents
 
 * Description
 * Installation
@@ -17,34 +17,34 @@ function generateMarkdown(data) {
 
 ## Description
 
-${data.description}
+${response.description}
 
 ##Installation
 
-${data.install}
+${response.install}
 
 ##Tests
 
-${data.testing}
+${response.testing}
 
 ##Useage
 
-${data.useage}
+${response.useage}
 
 ##Contributors
 
-${data.contributors}
+${response.contributors}
 
 ##Questions
 
-${data.questions}
+${response.questions}
 
 ##License
 ![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
 
-![User's Avatar](${data.avatarURL})
+![User's Avatar](${response.avatarURL})
 
-${data.email}
+${response.email}
 
   `;
   }
