@@ -1,6 +1,7 @@
 function generateMarkdown(data) {
     return `
-  # ${data.title}
+  
+#${data.title}
   
 
 # Table of Contents
@@ -14,27 +15,34 @@ function generateMarkdown(data) {
 * [License]{##License}
 
 ## Description
+
 ${data.description}
 
 ##Installation
+
 ${data.install}
 
 ##Tests
+
 ${data.testing}
 
 ##Useage
+
 ${data.useage}
 
 ##Contributors
+
 ${data.contributors}
 
 ##Questions
+
 ${data.questions}
 
 ##License
 ![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
 
 ![User's Avatar](${data.avatarURL})
+
 ${data.email}
 
   `;
