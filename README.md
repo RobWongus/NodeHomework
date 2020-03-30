@@ -1,9 +1,6 @@
-function generateMarkdown(response) {
-    return `
-  
-#${response.title}
-  
+
 # ReadMe Generator
+Node Application that generates a ReadME.md file from users input. 
 
 ## Table of Contents
 
@@ -17,27 +14,26 @@ function generateMarkdown(response) {
 
 ## Description
 
-${response.description}
 
 ##Installation
 
-${response.install}
+npm install, npm catch, npm axios
 
 ##Tests
 
-${response.testing}
+No tests used
 
 ##Useage
 
-${response.useage}
+To generate a ReadME
 
 ##Contributors
 
-${response.contributors}
+Rob Wongus
 
 ##Questions
 
-${response.questions}
+none
 
 ##License
 ![Github license](https://img.shields.io/github/license/RobWongus/NodeHomework)
@@ -48,5 +44,3 @@ ${response.questions}
 
 "Rob_Wo@yahoo.com"
 
-  `;
-  }
