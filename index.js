@@ -5,7 +5,7 @@ const http = require('http');
 const fs = require('fs');
 
 
-
+//console.log("Table of Contents");
 const questions = 
     [
         {
@@ -43,6 +43,12 @@ const questions =
             message: "usernames of contributers",
             name: "contributors"
         },
+
+        {
+            type: "input",
+            message: "enter email", 
+            name: "e-mail"
+        },
         
         {
             type: "input",
@@ -68,11 +74,10 @@ function writeToFile(fileName, data) {
         if (error){
             return console.log(error);
 
-        else 
-        }
-    })
-}
+        } 
+    });
 
+}   
         function init() {
             inquirer
             
