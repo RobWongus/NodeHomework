@@ -93,7 +93,7 @@ const questions =
                 //console.log("HERE!", answers.username);
                 const userInformation = api.getUser(answers.username)
                 .then(response => {
-                    fs.writeToFile("README.md", markDown, function(error) {
+                    fs.writeFile("README.md", markDown, function(error) {
                         if(error) {
                             throw error
                         }else{
